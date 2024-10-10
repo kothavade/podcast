@@ -8,3 +8,6 @@
 - todos:
   - cache last played time for an episodes
   - cache list of rss feeds added
+ 
+Screenshot:
+![screenshot](https://github.com/user-attachments/assets/6d8e6dfa-b055-4972-9c1b-bc875666a255)
