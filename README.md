@@ -4,7 +4,7 @@
 - made because i wanted a simple way to play a podcast without:
   - signing up for another website
   - downloading and running an app
-- needs a server of cors, so used nextjs instead
+- needs a server for cors, so used nextjs instead of something fully client-sided
 - todos:
   - cache last played time for an episodes
   - cache list of rss feeds added
