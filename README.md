@@ -5,3 +5,6 @@
   - signing up for another website
   - downloading and running an app
 - needs a server of cors, so used nextjs instead
+- todos:
+  - cache last played time for an episodes
+  - cache list of rss feeds added

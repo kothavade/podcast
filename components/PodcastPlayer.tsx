@@ -31,6 +31,7 @@ const PodcastPlayer: React.FC = () => {
   async function onSubmit(formData: FormData) {
     const res = await fetchPodcast(formData);
     if ('error' in res) {
+      console.error(res.error);
       setError(error);
       setPodcastData(null);
       return;
@@ -38,7 +39,7 @@ const PodcastPlayer: React.FC = () => {
 
     setPodcastData(res);
     setError(null);
-    router.push(`?url=${formData.get('url')}`);
+    router.replace(`?url=${encodeURIComponent(formData.get('url') as string)}`);
   }
 
   function setPageAndPush(newPage: number) {
@@ -87,7 +88,7 @@ const PodcastPlayer: React.FC = () => {
             name="url"
             placeholder="Enter podcast RSS URL"
             className="flex-grow mr-2"
-            defaultValue={searchParams.get('url') || ""}
+            defaultValue={decodeURIComponent(searchParams.get('url') || "")}
           />
           <SubmitButton />
         </div>
