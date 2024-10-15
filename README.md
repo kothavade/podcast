@@ -1,5 +1,6 @@
 # simple podcast rss player
 
+- [podcast.kothavade.com](podcast.kothavade.com)
 - input an rss feed and you can view and play episodes 
 - made because i wanted a simple way to play a podcast without:
   - signing up for another website
