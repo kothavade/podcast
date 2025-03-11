@@ -1,9 +1,11 @@
-"use server"
+"use server";
 
 import { parseString } from "xml2js";
 import { PodcastData } from "@/types";
 
-export async function fetchPodcast(formData: FormData): Promise<PodcastData | { error: string }> {
+export async function fetchPodcast(
+  formData: FormData,
+): Promise<PodcastData | { error: string }> {
   const url = formData.get("url") as string;
 
   if (!url) {
@@ -19,7 +21,6 @@ export async function fetchPodcast(formData: FormData): Promise<PodcastData | { 
         if (err) {
           resolve({ error: "Failed to parse RSS feed" });
         }
-
         const channel = result.rss.channel[0];
         const podcastData: PodcastData = {
           title: channel.title[0],
@@ -29,8 +30,8 @@ export async function fetchPodcast(formData: FormData): Promise<PodcastData | { 
             title: item.title[0],
             description: item.description ? item.description[0] : null,
             pubDate: new Date(item.pubDate[0]),
-            enclosure: item.enclosure[0].$
-          }))
+            enclosure: item.enclosure[0].$,
+          })),
         };
 
         resolve(podcastData);

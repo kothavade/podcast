@@ -15,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="antialiased"
-      >
+      <body className="antialiased" suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -26,13 +24,15 @@ export default function RootLayout({
         >
           <div className="container mx-auto p-4 min-h-screen">
             <div className="flex justify-end">
-              <h1 className="text-2xl font-bold mb-4 flex-grow">Simple RSS Podcast Player</h1>
+              <h1 className="text-2xl font-bold mb-4 grow">
+                Simple RSS Podcast Player
+              </h1>
               <ThemeSwitcher />
             </div>
             {children}
           </div>
         </ThemeProvider>
       </body>
-    </html >
+    </html>
   );
 }
